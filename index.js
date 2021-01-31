@@ -10,6 +10,10 @@ const digitPin = document.getElementById("digit-container");
 digitPin.addEventListener("click", function (event) {
     const digit = event.target.innerText;
     if (isNaN(digit)) {
+        if (digit == 'C') {
+            const typePin = document.getElementById("inputPin");
+            typePin.value = "";
+        }
 
     }
     else {
@@ -23,15 +27,18 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     let generatePin = document.getElementById("getInputPin").value;
     let inputPin = document.getElementById("inputPin").value;
     if (generatePin == inputPin) {
-        document.getElementById("pinMatch").style.display = "block";
+        displayMatchResult("block", "none");
     }
     else {
-        document.getElementById("pinNotMatch").style.display = "block";
+        displayMatchResult("none", "block");
     }
     document.getElementById("inputPin").value = "";
     document.getElementById("getInputPin").value = "";
 })
-
+function displayMatchResult(match, notMatch) {
+    document.getElementById("pinMatch").style.display = match;
+    document.getElementById("pinNotMatch").style.display = notMatch;
+}
 
 
 
