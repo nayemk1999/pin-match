@@ -32,8 +32,8 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     else {
         displayMatchResult("none", "block");
     }
-    document.getElementById("inputPin").value = "";
-    document.getElementById("getInputPin").value = "";
+    // document.getElementById("inputPin").value = "";
+    // document.getElementById("getInputPin").value = "";
 })
 function displayMatchResult(match, notMatch) {
     document.getElementById("pinMatch").style.display = match;
